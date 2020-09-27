@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-12 col-md-6 pl-3 pl-md-0 pt-md-5 m-t-fix-10"> <!--  d-none d-md-block -->
+
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="form-type-one">
+                <h3 class="form-type-one_title"><span class="color-primary">Ayúdanos</span> con unos datos más.</h3>
+                <p class="form-type-one_description mb-4">Porque te queremos dar una oferta hecha a la medida para ti, necesitamos saber un poco más.</p>
+
+                <form [formGroup]="rentForm" autocomplete="nope" novalidate>
+                    <div class="form-group mb-4">
+                        <label>¿Cuál es tu renta líquida/ingreso mensual?</label>
+                        <input type="text" class="form-control"
+                            formControlName="amount"
+                            [ngClass]="{ 'is-invalid': rentForm.get('amount').status === 'INVALID' && rentForm.get('amount').dirty }" 
+                            placeholder="Ej: $400.000"
+                        />
+                        <div *ngIf="rentForm.get('amount').status === 'INVALID' && rentForm.get('amount').dirty" class="invalid-feedback">
+                            <div *ngIf="rentForm.get('amount').errors.required">Campo de Renta no puede quedar vacío</div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-success btn-lg btn-block btn-brand-one" [disabled]="!rentForm.valid">CONTINUAR</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

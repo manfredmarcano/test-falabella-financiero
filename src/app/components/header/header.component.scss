@@ -1,0 +1,241 @@
+@import './../../../assets/scss/colors';
+$transition-general-value: all .3s ease-in-out;
+$transition-overlay-value: opacity .3s ease-in-out;
+
+:host {
+    height: 100px; // 120px;
+    max-height: 100px; // 120px;
+    // display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 55;
+
+    header {
+        height: 100%;
+        background-color: pink;
+    
+        .brand-logo {
+            height: 100%;
+            position: relative;
+            z-index: 45;
+    
+            img {
+                max-width: 173px;
+                height: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                   -moz-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                     -o-transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+            }
+        }
+    
+        .toggler-menu {
+            height: 28px;
+            width: 32px;
+            position: relative;
+            // display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            z-index: 55;
+            left: 0;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+               -moz-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                 -o-transform: translateY(-50%);
+                    transform: translateY(-50%);
+    
+            > span {
+                width: 100%;
+                height: 5px;
+                -webkit-border-radius: 5px;
+                   -moz-border-radius: 5px;
+                        border-radius: 5px;
+                position: absolute;
+                left: 0;
+                background-color: #3f3f3f;
+                -webkit-transition: $transition-general-value;
+                   -moz-transition: $transition-general-value;
+                     -o-transition: $transition-general-value;
+                        transition: $transition-general-value;
+    
+                &:nth-child(1) {
+                    top: 0;
+                }
+    
+                &:nth-child(2) {
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                       -moz-transform: translate(-50%, -50%);
+                        -ms-transform: translate(-50%, -50%);
+                         -o-transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%);
+                    opacity: 1;
+                }
+    
+                &:nth-child(3) {
+                    bottom: 0;
+                }
+            }
+    
+            &:hover {
+                > span {
+                    background-color: $color-brand-secondary;
+                }
+            }
+
+            &.show {
+                > span {
+                    background-color: $color-brand-secondary;
+
+                    &:nth-of-type(1),
+                    &:nth-of-type(3) {
+                        width: 24px;
+                        max-width: 24px;
+                        left: 50%;
+
+                        -webkit-transform-origin: center;
+                           -moz-transform-origin: center;
+                            -ms-transform-origin: center;
+                             -o-transform-origin: center;
+                                transform-origin: center;
+                    }
+
+                    &:nth-of-type(1) {
+                        top: 50%;
+
+                        -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                           -moz-transform: translate(-50%, -50%) rotate(45deg);
+                            -ms-transform: translate(-50%, -50%) rotate(45deg);
+                             -o-transform: translate(-50%, -50%) rotate(45deg);
+                                transform: translate(-50%, -50%) rotate(45deg);
+                    }
+
+                    &:nth-of-type(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-of-type(3) {
+                        bottom: 50%;
+                        top: inherit;
+
+                        -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+                           -moz-transform: translate(-50%, -50%) rotate(-45deg);
+                            -ms-transform: translate(-50%, -50%) rotate(-45deg);
+                             -o-transform: translate(-50%, -50%) rotate(-45deg);
+                                transform: translate(-50%, -50%) rotate(-45deg);
+                    }
+                }
+
+                &:hover {
+                    > span {
+                        background-color: #FFFFFF;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 575px) {
+                left: 15px
+            }
+        }
+    
+        .nav-menu {
+            background-color: #FFFFFF; // #393f57
+            position: absolute;
+            width: 50%; // 100%;
+            z-index: 65;
+            background-color: $color-background-primary;
+            height: calc(100% - 100px); // calc(100% - 120px);
+
+            -webkit-transform: translate3d(calc(-100% - 1px), 0, 0);
+               -moz-transform: translate3d(calc(-100% - 1px), 0, 0);
+                -ms-transform: translate3d(calc(-100% - 1px), 0, 0);
+                 -o-transform: translate3d(calc(-100% - 1px), 0, 0);
+                    transform: translate3d(calc(-100% - 1px), 0, 0);
+
+            -webkit-transition: $transition-general-value;
+               -moz-transition: $transition-general-value;
+                 -o-transition: $transition-general-value;
+                    transition: $transition-general-value;
+    
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                background-color: #FFFFFF;
+
+                li {
+                    font-family: 'PFBeauSansPro';
+                    padding: 12px 20px;
+                    border-top: solid 1px rgba(0, 0, 0, .125);
+                    cursor: pointer;
+                    -webkit-transition: $transition-general-value;
+                       -moz-transition: $transition-general-value;
+                         -o-transition: $transition-general-value;
+                            transition: $transition-general-value;
+                    outline: none;
+
+                    > a {
+                        font-size: 16px;
+                        color: $color-text-primary;
+                        cursor: pointer;
+                    }
+
+                    &:hover {
+                        background-color: $color-text-primary_hover;
+
+                        > a {
+                            text-decoration: none;
+                        }
+                    }
+
+                    &.active {
+                        background-color: $color-brand-primary;
+
+                        > a {
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+
+            &.show {
+                -webkit-transform: translate3d(0, 0, 0);
+                   -moz-transform: translate3d(0, 0, 0);
+                    -ms-transform: translate3d(0, 0, 0);
+                     -o-transform: translate3d(0, 0, 0);
+                        transform: translate3d(0, 0, 0);
+            }
+
+            @media screen and (max-width: 575px) {
+                width: 100%;
+            }
+        }
+
+        .overlay {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 54;
+            background-color: rgba(0, 0, 0, .5);
+            top: 0;
+            left: 0;
+            -webkit-transition: $transition-overlay-value;
+               -moz-transition: $transition-overlay-value;
+                 -o-transition: $transition-overlay-value;
+                    transition: $transition-overlay-value;
+            opacity: 0;
+            visibility: hidden;
+            
+            &.show {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}

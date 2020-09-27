@@ -1,0 +1,112 @@
+@import './../assets/scss/fonts';
+@import './../assets/scss/colors';
+@import './../assets/scss/mixins';
+
+::ng-deep {
+    .overlayed-page {
+        position: fixed !important;
+        // overflow-y: scroll;
+        overflow-y: auto;
+    }
+
+    .btn-brand-one {
+        letter-spacing: .16rem;
+        text-transform: uppercase;
+        padding: .6rem 1rem;
+        font-weight: 700;
+        height: 56px;
+
+        font-family: 'PFBeauSansPro';
+        font-weight: 400;
+
+        font-size: 16px;
+        line-height: 40px;
+
+        &:disabled,
+        &:disabled:hover {
+            background: #406b33;
+            border-color: #406b33;
+            opacity: .5;
+        }
+    }
+
+    .form-type-one {
+        background-color: #FFFFFF;
+        padding: 60px 80px;
+        -webkit-border-radius: 2px;
+           -moz-border-radius: 2px;
+                border-radius: 2px;
+  
+        color: $color-text-primary;
+        text-align: left;
+        margin-top: 80px;
+  
+        -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .05);
+           -moz-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .05);
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .05);
+  
+        &_title {
+           font-family: 'PFBeauSansPro';
+           font-weight: 200;
+           margin-bottom: 25px;
+  
+           > .color-primary {
+              color: $color-brand-primary;
+           }
+  
+           /* > .strong {
+              font-weight: 400;
+           } */
+        }
+  
+        &_description {
+           font-family: 'PFBeauSansPro';
+           font-weight: 200;
+        }
+  
+        label {
+           font-family: "PFBeauSansPro";
+           font-weight: 400;
+        }
+  
+        .form-control {
+            height: 56px;
+            font-family: "PFBeauSansPro";
+            font-weight: 400;
+            color: $color-text-secondary;
+
+            margin-bottom: 18px;
+
+            &.is-invalid {
+                margin-bottom: 5px;
+
+                .invalid-feedpack {
+                    margin-bottom: 18px;
+                }
+            }
+    
+            @include placeholder {
+                font-family: "PFBeauSansPro";
+                font-weight: 200;
+                
+            }
+        }
+
+        @media screen and (max-width: 575px) {
+            padding: 20px 10px 30px 10px;
+            margin-top: 10px;
+        }
+
+        @media screen and (min-width: 576px) and (max-width: 768px){
+            padding: 30px 20px;
+            margin-top: 10px;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .m-t-fix-10 {
+            margin-top: 100px;
+        }
+    }
+}
+

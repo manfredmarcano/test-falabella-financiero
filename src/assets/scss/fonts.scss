@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'PFBeauSansPro';
+    src: url('/../../assets/fonts/PFBeauSansPro-XThin.eot'); /* IE9 Compat Modes */
+    src: url('/../../assets/fonts/PFBeauSansPro-XThin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/../../assets/fonts/PFBeauSansPro-XThin.woff') format('woff'), /* Pretty Modern Browsers */
+         url('/../../assets/fonts/PFBeauSansPro-Bbook.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/../../assets/fonts/PFBeauSansPro-Bbook.woff2') format('woff2');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'PFBeauSansPro';
+    src: url('/../../assets/fonts/PFBeauSansPro-Thin.eot'); /* IE9 Compat Modes */
+    src: url('/../../assets/fonts/PFBeauSansPro-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/../../assets/fonts/PFBeauSansPro-Thin.woff') format('woff'), /* Pretty Modern Browsers */
+         url('/../../assets/fonts/PFBeauSansPro-Thin.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'PFBeauSansPro';
+    src: url('/../../assets/fonts/PFBeauSansPro-Bbook.eot'); /* IE9 Compat Modes */
+    src: url('/../../assets/fonts/PFBeauSansPro-Bbook.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/../../assets/fonts/PFBeauSansPro-Bbook.woff') format('woff'), /* Pretty Modern Browsers */
+         url('/../../assets/fonts/PFBeauSansPro-Bbook.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/../../assets/fonts/PFBeauSansPro-Bbook.woff2') format('woff2');
+    font-weight: 400;
+}
