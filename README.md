@@ -2,26 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
 
-## Development server
+## Paso 1) Ejecución del Frontend:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Situarse en el directorio principal del proyecto para luego ejecutar `npm install`.
 
-## Code scaffolding
+Al finalizar la descarga de los paquetes, ejecutar `npm start` y al terminar dicho despliegue navegar a `http://localhost:4200/`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Paso 2) Ejecución de Servidor Node:
 
-## Build
+Con otra consola situarse en el directorio principal del proyecto, pasar a la carpeta `express-api` con el comando `cd express-api` para luego ejecutar `npm install`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Al finalizar la descarga de los paquetes, ejecutar `npm start`
 
-## Running unit tests
+VOLVER AL FRONTEND Y USARLO.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+El archivo de texto donde se guardan los datos se encuentra en `/express-api/result-requests.txt`
