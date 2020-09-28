@@ -15,3 +15,5 @@ Con otra consola situarse en el directorio principal del proyecto, pasar a la ca
 Al finalizar la descarga de los paquetes, ejecutar `npm start`
 
 VOLVER AL FRONTEND Y USARLO.
+
+El archivo de texto donde se guardan los datos se encuentra en `/express-api/result-requests.txt`
