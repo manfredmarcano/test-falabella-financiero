@@ -7,10 +7,10 @@ import { NgModule } from '@angular/core';
 @NgModule({
     declarations: [LandingComponent],
     imports: [
-        CommonModule,
         LandingRoutingModule,
-        FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CommonModule,
+        FormsModule
     ]
 })
 export class LandingModule {}

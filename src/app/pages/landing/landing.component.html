@@ -1,22 +1,8 @@
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-6 pl-3 pl-md-0 pt-md-5 m-t-fix-10"> <!--  d-none d-md-block -->
+        <div class="col-12 col-md-6 pl-3 pl-md-0 pt-md-5 m-t-fix-10">
             <h3 class="title"><span>Tu Cuenta Corriente</span><span class="strong">100% on line</span></h3>
             
-            <!--
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius totam adipisci voluptatem ducimus. Exercitationem praesentium ratione cumque omnis incidunt tempora. Numquam maxime, odit id harum nobis illum. Eos, nam.
-            -->
-
             <div class="announcements d-none d-lg-flex">
                 <div class="announcements-items">
                     <div class="announcements-items_image">
@@ -48,7 +34,6 @@
             <div class="form-type-one">
                 <h3 class="form-type-one_title"><span class="color-primary">Ingresa</span> tus datos.</h3>
                 <p class="form-type-one_description">Solo necesitas tener tu cédula para realizar la solicitud.</p>
-
 
                 <form [formGroup]="requestForm" autocomplete="nope" novalidate>
                     <div class="form-group">
@@ -85,8 +70,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-success btn-lg btn-block btn-brand-one" [disabled]="!requestForm.valid">CONTINUAR</button>
-                    
+                    <button type="button" class="btn btn-success btn-lg btn-block btn-brand-one" [disabled]="!requestForm.valid" (click)="continue()">CONTINUAR</button>
                 </form>
 
             </div>

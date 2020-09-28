@@ -3,16 +3,15 @@ $transition-general-value: all .3s ease-in-out;
 $transition-overlay-value: opacity .3s ease-in-out;
 
 :host {
-    height: 100px; // 120px;
-    max-height: 100px; // 120px;
-    // display: block;
+    height: 100px;
+    max-height: 100px;
     position: fixed;
     width: 100%;
     z-index: 55;
 
     header {
         height: 100%;
-        background-color: pink;
+        background-color: #FFFFFF;
     
         .brand-logo {
             height: 100%;
@@ -37,7 +36,6 @@ $transition-overlay-value: opacity .3s ease-in-out;
             height: 28px;
             width: 32px;
             position: relative;
-            // display: inline-block;
             cursor: pointer;
             position: absolute;
             z-index: 55;
@@ -57,7 +55,7 @@ $transition-overlay-value: opacity .3s ease-in-out;
                         border-radius: 5px;
                 position: absolute;
                 left: 0;
-                background-color: #3f3f3f;
+                background-color: #3F3F3F;
                 -webkit-transition: $transition-general-value;
                    -moz-transition: $transition-general-value;
                      -o-transition: $transition-general-value;
@@ -145,12 +143,12 @@ $transition-overlay-value: opacity .3s ease-in-out;
         }
     
         .nav-menu {
-            background-color: #FFFFFF; // #393f57
+            background-color: #FFFFFF;
             position: absolute;
-            width: 50%; // 100%;
+            width: 50%;
             z-index: 65;
             background-color: $color-background-primary;
-            height: calc(100% - 100px); // calc(100% - 120px);
+            height: calc(100% - 100px);
 
             -webkit-transform: translate3d(calc(-100% - 1px), 0, 0);
                -moz-transform: translate3d(calc(-100% - 1px), 0, 0);

@@ -1,7 +1,7 @@
 
 <header (click)="clickedInside($event)">
 
-    <div class="container h-100 position-relative" style="background-color: white;">
+    <div class="container h-100 position-relative">
         <span class="toggler-menu" [class.show]="openedMenu" (click)="toggleMenu()">
             <span></span>
             <span></span>
@@ -16,7 +16,7 @@
     <nav class="nav-menu" [class.show]="openedMenu">
         <ul #menu>
             <li routerLink="/landing" routerLinkActive="active"><a>Inicio</a></li>
-            <li routerLink="/renta" routerLinkActive="active"><a>Renta</a></li>
+            <li><a>Enlace 2</a></li>
             <li><a>Enlace 3</a></li>
             <li><a>Enlace 4</a></li>
         </ul>

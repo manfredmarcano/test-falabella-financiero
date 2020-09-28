@@ -1,10 +1,6 @@
 <div class="container">
     <div class="row">
-        
-        <div class="col-12 col-md-6 pl-3 pl-md-0 pt-md-5 m-t-fix-10"> <!--  d-none d-md-block -->
-
-        </div>
-
+        <div class="col-12 col-md-6 pl-3 pl-md-0 pt-md-5 m-t-fix-10"></div>
         <div class="col-12 col-md-6">
             <div class="form-type-one">
                 <h3 class="form-type-one_title"><span class="color-primary">Ayúdanos</span> con unos datos más.</h3>
@@ -23,9 +19,13 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-success btn-lg btn-block btn-brand-one" [disabled]="!rentForm.valid">CONTINUAR</button>
-                </form>
+                    <button type="button" class="btn btn-success btn-lg btn-block btn-brand-one" [disabled]="!rentForm.valid || loading" (click)="continue()">CONTINUAR</button>
 
+                    <span class="message mt-4" [ngClass]="{ 'message-success': successRequest , 'message-error': failedRequest !== '' }" *ngIf="submittedRequest">
+                        <ng-container *ngIf="successRequest">Solicitud creada con éxito, nos pondremos en contacto con usted. <a routerLink="/landing">Volver al inicio</a></ng-container>
+                        <ng-container *ngIf="failedRequest !== ''">{{ failedRequest }}</ng-container>
+                    </span>
+                </form>
             </div>
         </div>
     </div>

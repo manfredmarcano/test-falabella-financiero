@@ -1,16 +1,15 @@
-import { Component, OnInit, ElementRef, Renderer2, OnDestroy } from '@angular/core';
+import { Component, OnInit, ElementRef, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LegacyDataComponent } from '../../components/legacy-data/legacy-data';
 import { fadeInAnimation } from 'src/app/utils/animations/fade-in.animation';
-import { slideInOutAnimation } from 'src/app/utils/animations/slide-in-out.animation';
+import { FormService } from 'src/app/services/form.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-landing',
     templateUrl: './landing.component.html',
     styleUrls: ['./landing.component.scss'],
-    // make fade in animation available to this component
     animations: [fadeInAnimation],
-
     // attach the fade in animation to the host (root) element of this component
     // tslint:disable-next-line: no-host-metadata-property
     host: { '[@fadeInAnimation]': '' }
@@ -19,11 +18,12 @@ export class LandingComponent extends LegacyDataComponent implements OnInit, OnD
     public requestForm: FormGroup;
 
     constructor(
-        elemTag: ElementRef,
-        renderer: Renderer2,
-        private formBuilder: FormBuilder
+        public elemTag: ElementRef,
+        private router: Router,
+        private formBuilder: FormBuilder,
+        private formService: FormService
     ) {
-        super(elemTag, renderer);
+        super(elemTag);
     }
 
     ngOnInit() {
@@ -31,7 +31,15 @@ export class LandingComponent extends LegacyDataComponent implements OnInit, OnD
             rut: ['', Validators.required],
             phone: ['', Validators.required],
             email: ['', Validators.required]
-            // email: ['', [Validators.required, Validators.email]],
         });
+    }
+
+    continue = () => {
+        if (!this.requestForm.valid) {
+            return;
+        }
+
+        this.formService.setFormCtaCorrienteFirstData(this.requestForm.value);
+        this.router.navigate(['/renta']);
     }
 }

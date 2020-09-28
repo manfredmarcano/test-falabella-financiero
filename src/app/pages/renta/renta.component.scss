@@ -2,23 +2,19 @@
 @import './../../../assets/scss/mixins';
 
 :host {
-   height: calc(100% - 100px); // calc(100% - 120px);
+   height: calc(100% - 100px);
    position: absolute;
-   top: 100px; // 120px;
+   top: 100px;
    width: 100%;
    z-index: 45;
 
    background-image: url('./../../../assets/images/fondo-renta.jpg');
    background-repeat: no-repeat;
    background-color: #FFFFFF;
-
    background-position: top;
-   // background-attachment: fixed;
 
    -webkit-background-size: 100%;
       -moz-background-size: 100%;
       -o-background-size: 100%;
          background-size: 100%;
-
-   // overflow-y: scroll;
 }

@@ -1,7 +1,8 @@
 import { Component, OnDestroy, Renderer2 } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 import { HeaderService } from './services/header.service';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { Router, NavigationStart } from '@angular/router';
+import { FormService } from './services/form.service';
 
 @Component({
     selector: 'app-root',
@@ -13,47 +14,34 @@ export class AppComponent implements OnDestroy {
     private routerSubscription: Subscription;
 
     constructor(
-        private headerService: HeaderService,
         public router: Router,
-        private renderer: Renderer2
+        private renderer: Renderer2,
+        private formService: FormService,
+        private headerService: HeaderService
     ) {
         this.routerSubscription = router.events.subscribe(event => {
             if (event instanceof NavigationStart) {
-                // console.log('Navigation started: ', event);
-
                 this.headerService.closeMenu();
-            }
 
-            // NavigationEnd
-            // NavigationCancel
-            // NavigationError
-            // RoutesRecognized
+                if (event.url === '/landing') {
+                    this.formService.resetForms();
+                }
+            }
         });
     }
 
     onOutletLoaded = (component: any) => {
-        // component.overlay = true
-        console.log('componente cargado: ', component);
-
-        component.overlay = this.headerService.getMenuOpening();
-
         this.menuSubscription = this.headerService.currentMenuOpening.subscribe((state: boolean) => {
-            // console.log('');
-            // console.log(component);
-            // console.log(`-----> Cambió el menú: `, state);
-
             if (state) {
                 this.renderer.addClass(component.elemTag.nativeElement, 'overlayed-page');
                 return;
             }
 
             this.renderer.removeClass(component.elemTag.nativeElement, 'overlayed-page');
-            // component.overlay = state;
         });
     }
 
     onOutletUnloaded = (component: any) => {
-        console.log('componente quitado del router: ', component);
         if (this.menuSubscription) {
             this.menuSubscription.unsubscribe();
         }
@@ -64,8 +52,4 @@ export class AppComponent implements OnDestroy {
             this.routerSubscription.unsubscribe();
         }
     }
-
-    /* getState(outlet: any) {
-        return outlet.activatedRouteData.state;
-    } */
 }
